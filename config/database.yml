@@ -21,6 +21,11 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
 development:
   <<: *default
   database: TreNotti_API_development
@@ -81,5 +86,3 @@ test:
 production:
   <<: *default
   database: TreNotti_API_production
-  username: TreNotti_API
-  password: <%= ENV['TRENOTTI_API_DATABASE_PASSWORD'] %>
