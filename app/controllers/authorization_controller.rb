@@ -1,6 +1,8 @@
 require 'jwt'
 require 'digest/sha2'
 class AuthorizationController < ApplicationController
+  before_action :verify_token, except: [:generate_token]
+  
   def generate_token
     if !params[:device_type].present? then
       render json:{"status" => "error", "description" => "device_type is required"}, status: 400
