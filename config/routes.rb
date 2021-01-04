@@ -5,5 +5,14 @@ Rails.application.routes.draw do
     scope :auth do
       post 'issue-key', to: 'authorization#generate_token'
     end
+    
+    scope :device do
+      post '', to: 'device#update'
+    end
+    
+    scope :railway do
+      get '', to: 'railway#get'
+      post '', to: 'railway#update'
+    end
   end
 end
