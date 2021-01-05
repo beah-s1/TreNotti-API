@@ -34,6 +34,6 @@ class RailwayController < ApplicationController
     @device.railways = railways
     @device.save()
     
-    render json:railways
+    render json: railways
   end
 end
