@@ -22,5 +22,12 @@ class ApplicationController < ActionController::API
     end
   end
   
+  def health_db
+    render json: {
+      "status" => "available",
+      "schema_version" => ActiveRecord::Migrator::current_version
+    }
+  end
+  
   helper_method :verify_token
 end

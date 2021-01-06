@@ -29,3 +29,5 @@
 .DS_Store
 .keep
 docker-compose.yaml
+
+gke-deployment/*
