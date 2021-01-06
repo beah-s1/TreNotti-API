@@ -14,5 +14,9 @@ Rails.application.routes.draw do
       get '', to: 'railway#get'
       post '', to: 'railway#update'
     end
+    
+    scope :health do
+      get 'db', to: 'application#health_db'
+    end
   end
 end
