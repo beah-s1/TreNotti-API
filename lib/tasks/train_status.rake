@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-namespace :railway_status do
+namespace :train_status do
   desc "路線情報のアップデート→通知処理"
   task :update => :environment do
     p "Updating Train Information..."
