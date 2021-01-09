@@ -15,6 +15,10 @@ Rails.application.routes.draw do
       post '', to: 'railway#update'
     end
     
+    scope "train-status" do
+      get '', to: 'train_status#index'
+    end
+    
     scope :health do
       get 'db', to: 'application#health_db'
     end
