@@ -11,7 +11,6 @@ class ApplicationController < ActionController::API
     
     begin
       token = JWT.decode(request.headers["Authorization"], ENV["JWT_SECRET"], true, { algorithm: 'HS256' })[0]
-      puts token
       @device = Device.find_by_id(token["id"])
       
       raise if !@device.present?
