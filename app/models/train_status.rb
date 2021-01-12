@@ -1,0 +1,2 @@
+class TrainStatus < ApplicationRecord
+end
